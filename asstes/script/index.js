@@ -1,83 +1,48 @@
-.arrow {
+'use strict';
+/*
 
-    position: absolute;
+JavaScript Basics
+Preet
 
-    top: 50%;
+*/
 
-    left: 50%;
 
-    transform: translate(-50%, -50%);
-
+function onEvent (event, selector, callback) {
+    return selector.addEventListener(event,callback);
 }
-
-
-
-.arrow span {
-
-    display: block;
-
-    width: 50px;
-
-    height: 50px;
-
-    border-bottom: 5px solid #06A8FF;
-
-    border-right: 5px solid #06A8FF;
-
-    transform: rotate(45deg);
-
-    margin: -10px;
-
-    animation: scroll1 2s infinite;
-
-}
-
-
-
-.arrow span:nth-child(2) {
-
-    animation-delay: -.2s;
-
-}
-
-
-
-.arrow span:nth-child(3) {
-
-    animation-delay: -.4s;
-
-}
-
-
-
-@keyframes scroll1 {
-
-    0% {
-
-        opacity: 1;
-
-        transform: rotate(45deg) translate(-20px, -20px);
-
-        border-bottom: 5px solid #ff6a06;
-
-        border-right: 5px solid #ff9b06;
-
+function  select(selector, parent = document){
+    return parent.querySelector(selector);
     }
 
-    50% {
-
-        opacity: 1;
-
-        transform: rotate(45deg) translate(-20px, -20px);
-
+            
+            const modal = select('.section');
+            const delay = select('.delay');
+            const text = select('.text');
+             
+            let n = 0;
+            const content = ['Hello', 'How ',' are ','You? '];
+    
+            function lets()  {
+            modal.classList.add('lessdelay');
+            }
+           function lets2(){
+        delay.classList.add('is-visible');
     }
 
-    100% {
+    window.addEventListener('load', () =>{
 
-        opacity: 1;
+lets();
+lets2();
 
-        transform: rotate(45deg) translate(-20px, -20px);
+    });
 
-    }
-
+       onEvent('click', delay, function () {
+        delay.innerText = (n === 2) ? 'again?' : 'more'; 
+        if ( n === 3) {
+         text.innerHTML = content[ n = 0 ];
+        return;
 }
+
+text.innerHTML = content[ ++n ];
+
+    }); 
