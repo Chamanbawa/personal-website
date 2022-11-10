@@ -20,7 +20,7 @@ function  select(selector, parent = document){
             const text = select('.text');
              
             let n = 0;
-            const content = ['Hello', 'How ',' are ','You? '];
+            const content = ['I wanna let the world know I am here', 'I love exploring ','Go down for More.', 'Good Luck!'];
     
             function lets()  {
             modal.classList.add('lessdelay');
@@ -37,7 +37,7 @@ lets2();
     });
 
        onEvent('click', delay, function () {
-        delay.innerText = (n === 2) ? 'again?' : 'more'; 
+        delay.innerText = (n === 2) ? 'Again?' : 'More'; 
         if ( n === 3) {
          text.innerHTML = content[ n = 0 ];
         return;
